@@ -1,0 +1,75 @@
+﻿
+@{
+    ViewData["Title"] = "INE";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h1>INE</h1>
+<div class="container-fluid">
+    <div class="row">
+        <div class="card-block">
+            <div class="row">
+                <div class="col-sm-12 table-responsive">
+                    <table id="TListadoPersonasINE" class="table">
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Domicilio</th>
+                                <th>Clave del Elector</th>
+                                <th>Curp</th>
+                                <th>Fecha de nacimiento</th>
+                                <th>Sexo</th>
+                                <th>Año de registro</th>
+                                <th>Estado</th>
+                                <th>Municipio</th>
+                                <th>Sección</th>
+                                <th>Localidad</th>
+                                <th>Emisión</th>
+                                <th>Vigencia</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @{
+                                if (ViewBag.PersonaINE != null)
+                                {
+                                    foreach (var item in ViewBag.PersonaINE)
+                                    {
+                                        <tr>
+                                            <td>@item.Persona.Nombre</td>
+                                            <td>@item.Domicilio</td>
+                                            <td>@item.ClaveElector</td>
+                                            <td>@item.CURP</td>
+                                            <td>@item.FechaNacimiento?.ToString("dd/MM/yyyy")</td>
+                                            <td>@item.Sexo</td>
+                                            <td>@item.YearRegistro</td>
+                                            <td>@item.Estado</td>
+                                            <td>@item.Municipio</td>
+                                            <td>@item.Seccion</td>
+                                            <td>@item.Localidad</td>
+                                            <td>@item.Emision</td>
+                                            <td>@item.Vigencia</td>
+                                        </tr>
+                                    }
+                                }
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+
+<script>
+    $(document).ready(function () {
+        $('#TListadoPersonasINE').DataTable();
+    });
+</script>
+
+

@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row mt-4">
+    <div class="col-lg-4 col-md-6 mt-4 mb-4">
+        <div class="card z-index-2 ">
+            <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2 bg-transparent">
+                <div class="bg-gradient-primary shadow-primary border-radius-lg py-3 pe-1">
+                    <div class="chart" >
+                        <div class="col-sm-12 text-center" height="170">
+                            <button type='button' class='btn bg-gradient-dark shadow-dark waves-effect waves-light' onclick="SubirArchivo()"> Capturar imagen</button>
+                            <input id="FileArchivo" type="file" onchange="ValidaUploadFile()" style="visibility:hidden">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <h6 class="mb-0 ">Captura de imagen fotográfica </h6>
+                <p class="text-sm ">Pantalla enfocada a dispositivos móviles </p>
+                <hr class="dark horizontal">
+                <div class="d-flex ">
+                    <i class="material-icons text-sm my-auto me-1">schedule</i>
+                    <p class="mb-0 text-sm"> Tiempo de carga de la imagen </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4 col-md-6 mt-4 mb-4">
+        
+    </div>
+    <div class="col-lg-4 mt-4 mb-3">
+        
+    </div>
+</div>
+
+<script src="~/js/Operacion/Captura/_scripIndex.js"></script>
